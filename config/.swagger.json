@@ -1,0 +1,229 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Tasty mock server REST API",
+    "description": "<a href='/'>Tasty mock server</a> API documentation. You can use this server for tasting <a href='https://adeo.github.io/tasty'>Tasty API Framework</a>."
+  },
+  "basePath": "/api",
+  "tags": [{
+    "name": "Authentication",
+    "description": "API for authentication users in the project"
+  }, {
+    "name": "Interaction",
+    "description": "API for user interaction"
+  }, {
+    "name": "Users",
+    "description": "API for users"
+  }, {
+    "name": "User",
+    "description": "API for user"
+  }, {
+    "name": "Products",
+    "description": "API for products"
+  }, {
+    "name": "Product",
+    "description": "API for product"
+  }],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": ["Authentication"],
+        "summary": "Login user in the system",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": ["Authentication"],
+        "summary": "Logout user from the system",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/book/:product": {
+      "post": {
+        "tags": ["Interaction"],
+        "summary": "Add product into cart (in other words - book product)",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/buy/:cart": {
+      "post": {
+        "tags": ["Interaction"],
+        "summary": "Buy cart",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Users"],
+        "summary": "Update product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Users"],
+        "summary": "Delete product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/:id": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": ["User"],
+        "summary": "Get user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": ["User"],
+        "summary": "Update user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["User"],
+        "summary": "Delete user",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "tags": ["Products"],
+        "summary": "Create products",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get products",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Products"],
+        "summary": "Update products",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Products"],
+        "summary": "Delete products",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/products/:id": {
+      "post": {
+        "tags": ["Product"],
+        "summary": "Create product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Product"],
+        "summary": "Get product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Product"],
+        "summary": "Update product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Product"],
+        "summary": "Delete product",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

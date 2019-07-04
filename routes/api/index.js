@@ -15,8 +15,8 @@ router.post('/book/:product', (req, res) => {
   res.send(`@todo book product ${req.params.product}`);
 });
 
-router.post('/buy/:cartId', (req, res) => {
-  res.send(`@todo buy products in cart ${req.params.cartId}`);
+router.post('/buy/:cart', (req, res) => {
+  res.send(`@todo buy products in cart ${req.params.cart}`);
 });
 
 router.post('/search', (req, res) => {

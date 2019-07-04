@@ -4,9 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const swagger = require('swagger-ui-express');
+const doc = require('./config/.swagger');
 
 const indexRouter = require('./routes/index');
-const documentationRouter = require('./routes/documentation');
 const apiRouters = require('./routes/api');
 
 const app = express();
@@ -22,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use('/', indexRouter);
-app.use('/documentation', documentationRouter);
+app.use('/documentation', swagger.serve, swagger.setup(doc));
 app.use('/api', apiRouters);
 app.use('*', (req, res) => res.redirect('/'));
 
