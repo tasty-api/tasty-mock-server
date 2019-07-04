@@ -6,8 +6,8 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const documentationRouter = require('./routes/documentation');
+const apiRouters = require('./routes/api');
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use('/', indexRouter);
 app.use('/documentation', documentationRouter);
-app.use('/users', usersRouter);
+app.use('/api', apiRouters);
 app.use('*', (req, res) => res.redirect('/'));
 
 app.use(function(req, res, next) {
