@@ -23,7 +23,7 @@ phases:
               Handler: index-${id}.handler
               Role: ${role}
               Runtime: nodejs10.x
-              Timeout: 5
+              Timeout: 10
               Events:
                 TastyMockAPI:
                   Type: Api
