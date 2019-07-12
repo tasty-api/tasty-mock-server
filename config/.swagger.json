@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Tasty mock server REST API",
-    "description": "<a href='/'>Tasty mock server</a> API documentation. You can use this server for tasting <a href='https://adeo.github.io/tasty'>Tasty API Framework</a>."
+    "description": "<a href='/'>Tasty mock server</a> API documentation. You can use this server for tasting <a href='https://tasty-api.github.io/tasty-doc/'>Tasty API Framework</a>."
   },
   "basePath": "/api",
   "tags": [{
