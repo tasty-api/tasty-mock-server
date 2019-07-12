@@ -1,0 +1,54 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+       nodejs: 10
+  pre_build:
+    commands:
+      - npm install
+      - npm install aws-serverless-express
+      - |-
+        cat <<EOF > template.yml
+        AWSTemplateFormatVersion: "2010-09-09"
+        Transform: AWS::Serverless-2016-10-31
+        Description: Tasty Mock Server
+        Resources:
+          TastyMockLambda:
+            Type: AWS::Serverless::Function
+            Properties:
+              FunctionName: tasty-mock-server
+              CodeUri: .
+              AutoPublishAlias: prod
+              Handler: index-${id}.handler
+              Role: ${role}
+              Runtime: nodejs10.x
+              Timeout: 10
+              Events:
+                TastyMockAPI:
+                  Type: Api
+                  Properties:
+                    Path: /{proxy+}
+                    Method: ANY
+              ReservedConcurrentExecutions: 20
+        EOF
+      - |-
+        cat <<EOF > index-${id}.js
+        'use strict'
+        const awsServerlessExpress = require('aws-serverless-express')
+        const app = require('./app')
+        const server = awsServerlessExpress.createServer(app)
+
+        exports.handler = (event, context) => awsServerlessExpress.proxy(server, event, context)
+        EOF
+  build:
+    commands:
+      - aws cloudformation package
+          --template-file template.yml
+          --s3-bucket ${bucket}
+          --s3-prefix tasty-mock-server/lambda_source
+          --output-template-file sam.yml
+
+artifacts:
+  files:
+     - sam.yml

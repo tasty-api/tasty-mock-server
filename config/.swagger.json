@@ -25,7 +25,7 @@
     "name": "Product",
     "description": "API for product"
   }],
-  "schemes": ["http"],
+  "schemes": ["https", "http"],
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
