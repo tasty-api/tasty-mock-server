@@ -1,6 +1,12 @@
 {
   "name": "tasty-mock-server",
   "version": "0.0.0",
+  "author": "Yegor Litvyakov <ylitvyakov@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tasty-api/tasty-mock-server.git"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
